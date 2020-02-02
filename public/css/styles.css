@@ -1,0 +1,17 @@
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.barra{
+  background-color: red;
+  height: 15px;
+}
+
+.imagen_fixed{
+  position: absolute;
+  width: 80px;
+  height: 110;
+  margin-left: 370px;
+  margin-top: -80px;
+}
