@@ -38,13 +38,15 @@
       @yield('content')
     </div>
 
+    </div>
+
     <footer>
       <div class="container">
           <div class="row">
               <div class="col-md-8">
-                  <h3>Your Logo</h3>
+                  <h3>Logo</h3>
                   <br>
-                  <h4>© 2016 Your Company. Designed and Developed by <a target="_blank" href="http://www.themeinthebox.com">ThemeintheBox.com</a></h4>
+                  <h4>2020 &copy; CONSTRUYENDO SUEÑOS.</a></h4>
               </div>
               <div class="col-md-4">
                   <p class="text-right social"><i class="typcn typcn-social-facebook-circular"></i><i class="typcn typcn-social-twitter-circular"></i><i class="typcn typcn-social-tumbler-circular"></i><i class="typcn typcn-social-github-circular"></i><i class="typcn typcn-social-dribbble-circular"></i></p>
