@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Plantilla</title>
+    <title>Web inmobiliaria</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
@@ -34,9 +34,9 @@
       @yield('central')
     </div>
 
-    <div class="container">
-      @yield('content')
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 
     </div>
 
