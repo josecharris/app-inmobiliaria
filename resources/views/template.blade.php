@@ -17,7 +17,7 @@
                 <li><a href="#" style="color: red; font-weight: bold; margin: 10px; font-size: 22px;">CONSTRUYENDO SUEÑOS</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right:150px">
-                <li><a href="#" style="font-weight: bold"><img src="{{asset('img/usuario.png')}}" style="margin-right: 10px; color: black">Login</a></li>
+                <li><a href="{{route('home')}}" style="font-weight: bold"><img src="{{asset('img/usuario.png')}}" style="margin-right: 10px; color: black">Login</a></li>
             </ul>
         </div>
         <!-- BARRA ROJA -->
