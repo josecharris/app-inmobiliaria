@@ -79,6 +79,9 @@
         <div class="imagen">
           <img src=" {{asset('img/logo.jpeg') }}" class="imagen_fixed" alt="">
         </div>
+        <main class="py-4 my-style">
+            @yield('nav')
+        </main>
         <main class="py-4">
             @yield('content')
         </main>
