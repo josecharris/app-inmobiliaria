@@ -10,21 +10,17 @@
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">EMPLEADOS</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar empleados</a>
-      <a class="dropdown-item" href="#">Mostrar empleados</a>
-      <a class="dropdown-item" href="#">Actualizar empleados</a>
+      <a class="dropdown-item" href="{{route('show')}}">Agregar empleados</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar empleados</a>
+      <a class="dropdown-item" href="{{route('list')}}">Listar empleados</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INMUEBLE</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar inmueble</a>
-      <a class="dropdown-item" href="#">Mostrar inmueble</a>
-      <a class="dropdown-item" href="#">Actualizar inmueble</a>
+      <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar inmueble</a>
+      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -53,40 +49,36 @@
 </ul>
 </nav>
 
-<div class="card" style="margin-left: -310px; width: 1000px; margin-top: 20px;">
-  <div class="card-body">
-    <h3 class="card-title" style="text-align: center">Lista de inmuebles</h3>
-    <div class="form-group">
-      <table class="table">
-        <tr>
-          <th>Dirección</th>
-          <th>Tamaño</th>
-          <th>Tipo</th>
-          <th>Precio</th>
-          <th>Telef. Propietario</th>
-          <th>Acciones</th>
-        </tr>
-        @foreach($inmuebles as $item)
-          <tr>
-            <th>{{$item->address}}</th>
-            <th>{{$item->size}}</th>
-            <th>{{$item->type}}</th>
-            <th>{{$item->price}}</th>
-            <th>{{$item->owner_phone}}</th>
-            <th>
-              <a href="{{ route('edit_inmueble', $item->id) }}" class="btn btn-danger">Editar</a>
-              <form class="d-inline" action="{{route('eliminar_inmueble', $item->id)}}" method="post">
-                @csrf
-                <button type="submit" class="btn btn-success">Eliminar</button>
-              </form>
-            </th>
-          </tr>
-          <hr>
-        @endforeach
-      </table>
-      {{$inmuebles->links()}}
+<form action="{{route('store')}}" method="post" style="margin-left: -400px; margin-top: 20px;">
+    @csrf
+    <div class="card" style="width: 890px; margin: 0 auto">
+      <div class="card-body">
+        <h3 class="card-title" style="text-align: center">Agendar cita</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="date" class="form-control" name="" value="">
+              <br>
+              <label for="">Hora:</label>
+              <input type="time" name="" value="hora">
+              <br>
+            </div>
+            <div class="col-md-4">
+              <input type="text" name="place" class="form-control"
+              placeholder="Lugar:" required>
+              <br>
+              <input type="text" name="description" class="form-control"
+              placeholder="Descripción" required>
+              <br>
+              <input type="text" name="name_client" class="form-control"
+              placeholder="Nombre del cliente:" required>
+              <br>
+              <input type="number" name="phone_client" class="form-control"
+              placeholder="Teléfono del cliente:" required>
+              <br>
+              <button type="submit" style="background-color:#021242; color: white" class="btn btn-success btn-block">Agendar</button>
+            </div>
+          </div>
+      </div>
     </div>
-  </div>
-</div>
-
+</form>
 @endsection

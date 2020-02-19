@@ -41,3 +41,7 @@ Route::get('/list_inmueble', 'InmuebleController@show')->name('list_inmueble');
 Route::get('/edit_inmueble/{id}', 'InmuebleController@edit')->name('edit_inmueble');
 Route::put('/update_inmueble/{id}', 'InmuebleController@update')->name('update_inmueble');
 Route::post('/eliminar_inmueble/{id}', 'InmuebleController@destroy')->name('eliminar_inmueble');
+
+
+//RUTAS DE CITAS
+Route::get('/show_cita', 'CitaController@index')->name('show_cita');

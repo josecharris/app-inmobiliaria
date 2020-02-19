@@ -20,11 +20,9 @@
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INMUEBLE</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar inmueble</a>
-      <a class="dropdown-item" href="#">Mostrar inmueble</a>
-      <a class="dropdown-item" href="#">Actualizar inmueble</a>
+      <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar inmueble</a>
+      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -57,29 +55,34 @@
     @csrf
     <div class="card" style="width: 890px; margin: 0 auto">
       <div class="card-body">
-        <h3 class="card-title" style="text-align: center">Agregar Inmueble</h3>
-        <div class="form-group">
-              <input type="text" name="address" class="form-control"
-              placeholder="Digite la dirección" required>
-              <br>
-              <input type="text" name="size" class="form-control"
-              placeholder="Digite el tamaño" required>
-              <br>
-              <input type="text" name="type" class="form-control"
-              placeholder="Tipo:" required>
-              <br>
-              <input type="number" name="price" class="form-control"
-              placeholder="Precio:" required>
-              <br>
-              <input type="text" name="owner_phone" class="form-control"
-              placeholder="Teléfono del propietario:" required>
-              <br>
-              <textarea class="form-control" name="description" rows="3"
-              placeholder="Descripción" required></textarea>
-              <br>
-              <input type="file" class="form-control" name="url">
-              <br>
-              <button type="submit" class="btn btn-success btn-block">Enviar</button>
+        <div class="row">
+          .<div class="col-md-6">
+            <h3 class="card-title" style="color: #062378"><strong>Agregar Inmueble</strong></h3>
+            <input type="text" name="address" class="form-control"
+            placeholder="Digite la dirección" required>
+            <br>
+            <input type="text" name="size" class="form-control"
+            placeholder="Digite el tamaño" required>
+            <br>
+            <input type="text" name="type" class="form-control"
+            placeholder="Tipo:" required>
+            <br>
+            <input type="number" name="price" class="form-control"
+            placeholder="Precio:" required>
+            <br>
+            <input type="text" name="owner_phone" class="form-control"
+            placeholder="Teléfono del propietario:" required>
+            <br>
+          </div>
+          <div class="col-md-4">
+            <textarea class="form-control" name="description" rows="3"
+            placeholder="Descripción" style="margin-top: 60px;" required></textarea>
+            <br>
+            <input type="file" class="form-control" name="url">
+            <br>
+            <button type="submit" class="btn btn-danger btn-block">Enviar</button>
+          </div>
+
         </div>
       </div>
     </div>

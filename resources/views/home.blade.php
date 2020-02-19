@@ -26,7 +26,7 @@
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AGENDA</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Crear cita</a>
+      <a class="dropdown-item" href="{{route('show_cita')}}">Crear cita</a>
       <a class="dropdown-item" href="#">Mostrar agenda</a>
       <a class="dropdown-item" href="#">Actualizar cita</a>
       <div class="dropdown-divider"></div>
