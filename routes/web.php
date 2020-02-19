@@ -32,3 +32,12 @@ Route::post('/store', 'UserController@store')->name('store');
 Route::get('/edit/{id}', 'UserController@edit')->name('edit');
 Route::put('/update/{id}', 'UserController@update')->name('update');
 Route::post('/eliminar/{id}', 'UserController@destroy')->name('eliminar');
+
+
+//RUTAS DE INMUEBLES
+Route::get('/show_inmueble', 'InmuebleController@index')->name('show_inmueble');
+Route::post('/store_inmueble', 'InmuebleController@store')->name('store_inmueble');
+Route::get('/list_inmueble', 'InmuebleController@show')->name('list_inmueble');
+Route::get('/edit_inmueble/{id}', 'InmuebleController@edit')->name('edit_inmueble');
+Route::put('/update_inmueble/{id}', 'InmuebleController@update')->name('update_inmueble');
+Route::post('/eliminar_inmueble/{id}', 'InmuebleController@destroy')->name('eliminar_inmueble');

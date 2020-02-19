@@ -14,7 +14,7 @@ class InmuebleController extends Controller
      */
     public function index()
     {
-        //
+        return view('inmuebles.crear');
     }
 
     /**
@@ -24,7 +24,7 @@ class InmuebleController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,16 @@ class InmuebleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $inmueble = new Inmueble();
+      $inmueble->address = $request->address;
+      $inmueble->size = $request->size;
+      $inmueble->type = $request->type;
+      $inmueble->price = $request->price;
+      $inmueble->owner_phone = $request->owner_phone;
+      $inmueble->description = $request->description;
+      $inmueble->url = 'img/' . $request->url;
+      $inmueble->save();
+      return back();
     }
 
     /**
@@ -46,7 +55,8 @@ class InmuebleController extends Controller
      */
     public function show(Inmueble $inmueble)
     {
-        //
+        $inmuebles = Inmueble::paginate(5);
+        return view('inmuebles.listar', compact("inmuebles"));
     }
 
     /**
@@ -55,9 +65,10 @@ class InmuebleController extends Controller
      * @param  \App\Inmueble  $inmueble
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inmueble $inmueble)
+    public function edit($id)
     {
-        //
+        $inmueble = Inmueble::findOrFail($id);
+        return view("inmuebles.edit", compact("inmueble"));
     }
 
     /**
@@ -67,9 +78,18 @@ class InmuebleController extends Controller
      * @param  \App\Inmueble  $inmueble
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Inmueble $inmueble)
+    public function update(Request $request, $id)
     {
-        //
+      $inmueble = Inmueble::findOrFail($id);
+      $inmueble->address = $request->address;
+      $inmueble->size = $request->size;
+      $inmueble->type = $request->type;
+      $inmueble->price = $request->price;
+      $inmueble->owner_phone = $request->owner_phone;
+      $inmueble->description = $request->description;
+      $inmueble->url = 'img/' . $request->url;
+      $inmueble->save();
+      return back();
     }
 
     /**
@@ -78,8 +98,10 @@ class InmuebleController extends Controller
      * @param  \App\Inmueble  $inmueble
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inmueble $inmueble)
+    public function destroy($id)
     {
-        //
+      $eliminar = Inmueble::findOrFail($id);
+      $eliminar->delete();
+      return back();
     }
 }

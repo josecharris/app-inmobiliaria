@@ -18,7 +18,7 @@
    <hr style="background-color: black">
      <div class="row fondo" style="margin-top: 10px; margin-bottom: 10px">
        <div class="col-md-6">
-         <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+         <img src="{{asset($casa->url)}}" alt="" class="imagen_setting">
        </div>
        <div class="col-md-6">
          <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>
@@ -32,7 +32,7 @@
    @if($loop->even)
    <div class="row fondo2" style="margin-bottom: 10px">
      <div class="col-md-6">
-       <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+       <img src="{{asset($casa->url)}}" alt="" class="imagen_setting">
      </div>
      <div class="col-md-6">
        <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>

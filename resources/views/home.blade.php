@@ -18,11 +18,9 @@
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INMUEBLE</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar inmueble</a>
-      <a class="dropdown-item" href="#">Mostrar inmueble</a>
-      <a class="dropdown-item" href="#">Actualizar inmueble</a>
+      <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar inmueble</a>
+      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -69,7 +67,7 @@
     <hr style="background-color: black">
       <div class="row fondo" style="margin-top: 10px; margin-bottom: 10px">
         <div class="col-md-6">
-          <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+          <img src="{{asset($casa->url)}}" alt="" class="imagen_setting">
         </div>
         <div class="col-md-6">
           <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>
@@ -83,7 +81,7 @@
     @if($loop->even)
     <div class="row fondo2" style="margin-bottom: 10px">
       <div class="col-md-6">
-        <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+        <img src="{{asset($casa->url)}}" alt="" class="imagen_setting">
       </div>
       <div class="col-md-6">
         <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>
