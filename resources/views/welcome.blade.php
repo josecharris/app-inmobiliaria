@@ -13,35 +13,38 @@
       <hr>
     </div>
   </div>
-
-  <div class="row fondo" style="margin-top: 10px; margin-bottom: 10px">
-    <div class="col-md-6">
-      <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
-    </div>
-    <div class="col-md-6">
-      <h2 style="text-align: center"><i>Propiedad 1</i></h2>
-      <h3>Tipo: Arriendo</h3>
-      <h3>Ciudad: Sogamoso, Boyacá</h3>
-      <h3>Barrio: El bosque</h3>
-      <h3>Area: 42 m2</h3>
-      <h3>Tiene 5 habitaciones</h3>
-    </div>
-  </div>
-  <hr style="background-color: black">
-  <div class="row fondo2" style="margin-bottom: 10px">
-    <div class="col-md-6">
-      <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
-    </div>
-    <div class="col-md-6">
-      <h2 style="text-align: center"><i>Propiedad 2</i></h2>
-      <h3>Tipo: Venta</h3>
-      <h3>Ciudad: Sogamoso, boyacá</h3>
-      <h3>Barrio: Laguito</h3>
-      <h3>Area: 96.00 m2</h3>
-      <h3>Tiene 5 habitaciones</h3>
-    </div>
-  </div>
-  <hr style="background-color: black">
+ @foreach($casas as $casa)
+   @if($loop->odd)
+   <hr style="background-color: black">
+     <div class="row fondo" style="margin-top: 10px; margin-bottom: 10px">
+       <div class="col-md-6">
+         <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+       </div>
+       <div class="col-md-6">
+         <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>
+         <h3>Tipo: {{$casa->type}}</h3>
+         <h3>Dirección: {{$casa->address}}</h3>
+         <h3>Area: {{$casa->size}}</h3>
+         <h3>{{$casa->description}}</h3>
+       </div>
+     </div>
+   @endif
+   @if($loop->even)
+   <div class="row fondo2" style="margin-bottom: 10px">
+     <div class="col-md-6">
+       <img src="{{asset('img/casa1.jpg')}}" alt="" class="imagen_setting">
+     </div>
+     <div class="col-md-6">
+       <h2 style="text-align: center"><i>Propiedad {{$loop->iteration}}</i></h2>
+       <h3>Tipo: {{$casa->type}}</h3>
+       <h3>Dirección: {{$casa->address}}</h3>
+       <h3>Area: {{$casa->size}}</h3>
+       <h3>{{$casa->description}}</h3>
+     </div>
+   </div>
+   @endif
+   <hr style="background-color: black">
+ @endforeach
 </div>
 
 <div class="container">
@@ -62,9 +65,4 @@
     </div>
   </div>
 </div>
-
-
-
-
-
 @endsection

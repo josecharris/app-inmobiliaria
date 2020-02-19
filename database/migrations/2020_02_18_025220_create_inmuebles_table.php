@@ -18,9 +18,10 @@ class CreateInmueblesTable extends Migration
             $table->string('address');
             $table->string('size');
             $table->string('type');
-            $table->bigInteger('price');
+            $table->double('price');
             $table->string('owner_phone');
             $table->string('description');
+            $table->string('url');
             $table->timestamps();
         });
     }
