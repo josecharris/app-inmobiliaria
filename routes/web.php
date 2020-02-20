@@ -45,3 +45,8 @@ Route::post('/eliminar_inmueble/{id}', 'InmuebleController@destroy')->name('elim
 
 //RUTAS DE CITAS
 Route::get('/show_cita', 'CitaController@index')->name('show_cita');
+Route::post('/store_cita', 'CitaController@store')->name('store_cita');
+Route::get('/list_cita', 'CitaController@show')->name('list_cita');
+Route::get('/edit_cita/{id}', 'CitaController@edit')->name('edit_cita');
+Route::put('/update_cita/{id}', 'CitaController@update')->name('update_cita');
+Route::post('/eliminar_cita/{id}', 'CitaController@destroy')->name('eliminar_cita');

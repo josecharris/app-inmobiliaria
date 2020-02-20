@@ -28,7 +28,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{{route('show_cita')}}">Crear cita</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Listar cita</a>
+      <a class="dropdown-item" href="{{route('list_cita')}}">Listar cita</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -47,23 +47,42 @@
 </ul>
 </nav>
 
-<form action="{{route('update', $usuario->id)}}" method="post" style="margin-left: -400px; margin-top: 20px;">
-    @method('put')
-    @csrf
-    <div class="card" style="width: 890px; margin: 0 auto">
-      <div class="card-body">
-        <h3 class="card-title" style="text-align: center">Editar empleado</h3>
-        <div class="form-group">
-              <input type="text" name="name" class="form-control" value="{{$usuario->name}}" required>
-              <br>
-              <input type="email" name="email" class="form-control" value="{{$usuario->email}}" required>
-              <br>
-              <input type="number" name="phone" class="form-control" value="{{$usuario->phone}}" required>
-              <br>
-              <button type="submit" class="btn btn-success btn-block">Enviar</button>
-        </div>
-      </div>
-    </div>
+<div class="card" style="margin-left: -210px; width: 900px; margin-top: 20px;">
+  <div class="card-body">
+    <h3 class="card-title" style="text-align: center">Lista de citas</h3>
+    <div class="form-group">
+      <table class="table">
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Lugar</th>
+          <th>Descripción</th>
+          <th>Nombre cliente</th>
+          <th>Numero cliente</th>
+          <th>Acciones</th>
+        </tr>
+        @foreach($citas as $item)
+          <tr>
+            <th>{{$item->date}}</th>
+            <th>{{$item->hour}}</th>
+            <th>{{$item->place}}</th>
+            <th>{{$item->description}}</th>
+            <th>{{$item->nameclient}}</th>
+            <th>{{$item->phoneclient}}</th>
+            <th>
+              <a href="{{ route('edit_cita', $item->id) }}" class="btn btn-warning">Editar</a>
+              <form class="d-inline" action="{{route('eliminar_cita', $item->id)}}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </th>
 
-</form>
+          </tr>
+        @endforeach
+      </table>
+      {{$citas->links()}}
+    </div>
+  </div>
+</div>
+
 @endsection

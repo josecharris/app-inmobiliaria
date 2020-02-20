@@ -35,7 +35,15 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cita = new Cita();
+        $cita->date = $request->fecha;
+        $cita->hour = $request->hora;
+        $cita->place = $request->place;
+        $cita->description = $request->description;
+        $cita->nameclient = $request->name_client;
+        $cita->phoneclient = $request->phone_client;
+        $cita->save();
+        return back();
     }
 
     /**
@@ -44,9 +52,10 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function show(Cita $cita)
+    public function show()
     {
-        //
+        $citas = Cita::paginate(5);
+        return view('citas.listar', compact("citas"));
     }
 
     /**
@@ -55,9 +64,10 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cita $cita)
+    public function edit($id)
     {
-        //
+        $cita = Cita::findOrFail($id);
+        return view("citas.editar", compact("cita"));
     }
 
     /**
@@ -67,9 +77,17 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cita $cita)
+    public function update(Request $request, $id)
     {
-        //
+      $cita = Cita::findOrFail($id);
+      $cita->date = $request->fecha;
+      $cita->hour = $request->hora;
+      $cita->place = $request->place;
+      $cita->description = $request->description;
+      $cita->nameclient = $request->name_client;
+      $cita->phoneclient = $request->phone_client;
+      $cita->save();
+      return back();
     }
 
     /**
@@ -78,8 +96,10 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cita $cita)
+    public function destroy($id)
     {
-        //
+        $eliminar = Cita::findOrFail($id);
+        $eliminar->delete();
+        return back();
     }
 }

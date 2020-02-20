@@ -28,7 +28,7 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{{route('show_cita')}}">Crear cita</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Listar cita</a>
+      <a class="dropdown-item" href="{{route('list_cita')}}">Listar cita</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -47,21 +47,35 @@
 </ul>
 </nav>
 
-<form action="{{route('update', $usuario->id)}}" method="post" style="margin-left: -400px; margin-top: 20px;">
+<form action="{{route('update_cita', $cita->id)}}" method="post" style="margin-left: -400px; margin-top: 20px;">
     @method('put')
     @csrf
     <div class="card" style="width: 890px; margin: 0 auto">
       <div class="card-body">
-        <h3 class="card-title" style="text-align: center">Editar empleado</h3>
-        <div class="form-group">
-              <input type="text" name="name" class="form-control" value="{{$usuario->name}}" required>
+        <h3 class="card-title" style="text-align: center">Editar cita</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="date" class="form-control" name="fecha" value="{{$cita->date}}">
               <br>
-              <input type="email" name="email" class="form-control" value="{{$usuario->email}}" required>
+              <label for="">Hora:</label>
+              <input type="time" name="hora" value="{{$cita->hour}}">
               <br>
-              <input type="number" name="phone" class="form-control" value="{{$usuario->phone}}" required>
+            </div>
+            <div class="col-md-4">
+              <input type="text" name="place" class="form-control" value="{{$cita->place}}" required>
               <br>
-              <button type="submit" class="btn btn-success btn-block">Enviar</button>
-        </div>
+              <input type="text" name="description" class="form-control"
+              value="{{$cita->description}}" required>
+              <br>
+              <input type="text" name="name_client" class="form-control"
+              value="{{$cita->nameclient}}" required>
+              <br>
+              <input type="number" name="phone_client" class="form-control"
+              value="{{$cita->phoneclient}}" required>
+              <br>
+              <button type="submit" style="background-color:#021242; color: white" class="btn btn-success btn-block">Agendar</button>
+            </div>
+          </div>
       </div>
     </div>
 

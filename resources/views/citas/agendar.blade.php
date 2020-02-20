@@ -20,17 +20,15 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
+      <a class="dropdown-item" href="{{route('list_inmueble')}}">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AGENDA</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Crear cita</a>
-      <a class="dropdown-item" href="#">Mostrar agenda</a>
-      <a class="dropdown-item" href="#">Actualizar cita</a>
+      <a class="dropdown-item" href="{{route('show_cita')}}">Crear cita</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar cita</a>
+      <a class="dropdown-item" href="#">Listar cita</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
@@ -49,17 +47,17 @@
 </ul>
 </nav>
 
-<form action="{{route('store')}}" method="post" style="margin-left: -400px; margin-top: 20px;">
+<form action="{{route('store_cita')}}" method="post" style="margin-left: -400px; margin-top: 20px;">
     @csrf
     <div class="card" style="width: 890px; margin: 0 auto">
       <div class="card-body">
         <h3 class="card-title" style="text-align: center">Agendar cita</h3>
           <div class="row">
             <div class="col-md-6">
-              <input type="date" class="form-control" name="" value="">
+              <input type="date" class="form-control" name="fecha">
               <br>
               <label for="">Hora:</label>
-              <input type="time" name="" value="hora">
+              <input type="time" name="hora" value="">
               <br>
             </div>
             <div class="col-md-4">

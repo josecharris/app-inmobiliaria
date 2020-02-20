@@ -53,7 +53,7 @@ class InmuebleController extends Controller
      * @param  \App\Inmueble  $inmueble
      * @return \Illuminate\Http\Response
      */
-    public function show(Inmueble $inmueble)
+    public function show()
     {
         $inmuebles = Inmueble::paginate(5);
         return view('inmuebles.listar', compact("inmuebles"));

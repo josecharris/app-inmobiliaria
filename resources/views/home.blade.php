@@ -20,17 +20,15 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
+      <a class="dropdown-item" href="{{route('list_inmueble')}}">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AGENDA</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{{route('show_cita')}}">Crear cita</a>
-      <a class="dropdown-item" href="#">Mostrar agenda</a>
-      <a class="dropdown-item" href="#">Actualizar cita</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar cita</a>
+      <a class="dropdown-item" href="{{route('list_cita')}}">Listar cita</a>
     </div>
   </li>
   <li class="nav-item dropdown f">

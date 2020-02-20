@@ -10,21 +10,17 @@
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">EMPLEADOS</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar empleados</a>
-      <a class="dropdown-item" href="#">Mostrar empleados</a>
-      <a class="dropdown-item" href="#">Actualizar empleados</a>
+      <a class="dropdown-item" href="{{route('show')}}">Agregar empleados</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar empleados</a>
+      <a class="dropdown-item" href="{{route('list')}}">Listar empleados</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INMUEBLE</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Agregar inmueble</a>
-      <a class="dropdown-item" href="#">Mostrar inmueble</a>
-      <a class="dropdown-item" href="#">Actualizar inmueble</a>
+      <a class="dropdown-item" href="{{route('show_inmueble')}}">Agregar inmueble</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Eliminar inmueble</a>
+      <a class="dropdown-item" href="list_inmueble">Listar inmuebles</a>
     </div>
   </li>
   <li class="nav-item dropdown f">
