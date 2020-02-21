@@ -12,5 +12,41 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $casas = App\Inmueble::paginate(5);
+    return view('welcome', compact("casas"));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+//RUTAS DE USUARIO
+Route::get('/list', 'UserController@show')->name('list');
+Route::get('/show', 'UserController@index')->name('show');
+Route::post('/store', 'UserController@store')->name('store');
+Route::get('/edit/{id}', 'UserController@edit')->name('edit');
+Route::put('/update/{id}', 'UserController@update')->name('update');
+Route::post('/eliminar/{id}', 'UserController@destroy')->name('eliminar');
+
+
+//RUTAS DE INMUEBLES
+Route::get('/show_inmueble', 'InmuebleController@index')->name('show_inmueble');
+Route::post('/store_inmueble', 'InmuebleController@store')->name('store_inmueble');
+Route::get('/list_inmueble', 'InmuebleController@show')->name('list_inmueble');
+Route::get('/edit_inmueble/{id}', 'InmuebleController@edit')->name('edit_inmueble');
+Route::put('/update_inmueble/{id}', 'InmuebleController@update')->name('update_inmueble');
+Route::post('/eliminar_inmueble/{id}', 'InmuebleController@destroy')->name('eliminar_inmueble');
+
+
+//RUTAS DE CITAS
+Route::get('/show_cita', 'CitaController@index')->name('show_cita');
+Route::post('/store_cita', 'CitaController@store')->name('store_cita');
+Route::get('/list_cita', 'CitaController@show')->name('list_cita');
+Route::get('/edit_cita/{id}', 'CitaController@edit')->name('edit_cita');
+Route::put('/update_cita/{id}', 'CitaController@update')->name('update_cita');
+Route::post('/eliminar_cita/{id}', 'CitaController@destroy')->name('eliminar_cita');
