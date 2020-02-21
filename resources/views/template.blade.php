@@ -44,9 +44,11 @@
       <div class="container">
           <div class="row">
               <div class="col-md-8">
-                  <h3>Logo</h3>
+                <div class="imagen">
+                  <img src=" {{asset('img/logo.jpeg') }}" class="imagen_fixed" style="margin-left: -25px;">
+                </div>
                   <br>
-                  <h4>2020 &copy; CONSTRUYENDO SUEÑOS.</a></h4>
+                  <h4 class="h4" style="text-align:center;"><center><small>CONSTRUYENDO SUEÑOS &copy; 2020</small></center></h4>
               </div>
               <div class="col-md-4">
                   <p class="text-right social"><i class="typcn typcn-social-facebook-circular"></i><i class="typcn typcn-social-twitter-circular"></i><i class="typcn typcn-social-tumbler-circular"></i><i class="typcn typcn-social-github-circular"></i><i class="typcn typcn-social-dribbble-circular"></i></p>
